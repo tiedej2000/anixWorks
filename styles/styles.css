@@ -1,6 +1,6 @@
 :root {
   --lightGrey: rgb(189, 189, 189);
-  --darkGrey: rgb(56, 56, 56);
+  --darkGrey: rgb(75, 75, 75);
   --white: white;
   --black: #161616;
   --small: clamp(0.6rem, 0.7vw, 1rem);
@@ -31,7 +31,7 @@ nav {
   justify-content: space-between;
   padding: 15px 25px;
   border-bottom: 1px solid var(--darkGrey);
-  color: var(--lightGrey);
+  color: var(--darkGrey);
   font-size: var(--small);
   position: fixed;
   top: 10px;
@@ -46,7 +46,7 @@ nav .nav_list li {
   cursor: pointer;
 }
 nav .nav_list li:hover {
-  color: var(--white);
+  color: var(--black);
 }
 nav .nav_list svg {
   width: 25px;
