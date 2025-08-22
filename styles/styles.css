@@ -15,8 +15,8 @@ body {
   height: auto;
   width: 100%;
   overflow-x: hidden;
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
 }
 
 header {
@@ -26,11 +26,16 @@ header {
 }
 
 nav {
+  width: calc(100% - 20px);
   display: flex;
-  padding: 25px;
+  justify-content: space-between;
+  padding: 15px 25px;
   border-bottom: 1px solid var(--darkGrey);
   color: var(--lightGrey);
   font-size: var(--small);
+  position: fixed;
+  top: 10px;
+  left: 10px;
 }
 nav .nav_list {
   display: flex;
@@ -47,4 +52,20 @@ nav .nav_list svg {
   width: 25px;
   height: 25px;
   vertical-align: middle;
+  fill: var(--black);
+}
+nav .right li:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url(https://cdn.prod.website-files.com/66f21b00f5b67738c16bd030/6755f761307465d0d485c42d_dot-pattern.svg);
+  background-size: auto, auto;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
 }/*# sourceMappingURL=styles.css.map */
