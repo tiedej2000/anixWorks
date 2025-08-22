@@ -1,0 +1,64 @@
+:root{
+    //colors
+    --lightGrey: rgb(189, 189, 189);
+    --darkGrey: rgb(56, 56, 56);
+    --white: white;
+    --black: #161616;
+
+    //font sizes
+    --small: clamp(0.6rem, 0.7vw, 1rem);
+}
+
+//fonts
+
+$geistReg: "Geist", sans-serif;
+$geistMono: "Geist Mono", monospace;
+
+//paddings and margings
+
+html{
+    scroll-behavior: smooth;
+    font-family: $geistReg;
+}
+
+body{
+    height: auto;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+header{
+    width: 100%;
+    height: auto;
+    font-family: $geistMono;
+}
+
+nav{
+    display: flex;
+    padding: 25px;
+    border-bottom: 1px solid var(--darkGrey);
+    color:var(--lightGrey);
+    font-size: var(--small);
+
+    .nav_list{
+        display: flex;
+        align-items: center; 
+        gap: 20px;
+
+        li{
+            cursor: pointer;
+
+            &:hover{
+                color: var(--white);
+            }
+        }
+
+        svg{
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+        }
+    }
+}

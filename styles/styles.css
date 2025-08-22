@@ -1,0 +1,50 @@
+:root {
+  --lightGrey: rgb(189, 189, 189);
+  --darkGrey: rgb(56, 56, 56);
+  --white: white;
+  --black: #161616;
+  --small: clamp(0.6rem, 0.7vw, 1rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: "Geist", sans-serif;
+}
+
+body {
+  height: auto;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+header {
+  width: 100%;
+  height: auto;
+  font-family: "Geist Mono", monospace;
+}
+
+nav {
+  display: flex;
+  padding: 25px;
+  border-bottom: 1px solid var(--darkGrey);
+  color: var(--lightGrey);
+  font-size: var(--small);
+}
+nav .nav_list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+nav .nav_list li {
+  cursor: pointer;
+}
+nav .nav_list li:hover {
+  color: var(--white);
+}
+nav .nav_list svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}/*# sourceMappingURL=styles.css.map */
