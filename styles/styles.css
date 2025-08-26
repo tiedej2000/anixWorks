@@ -17,12 +17,17 @@ body {
   overflow-x: hidden;
   background-color: var(--white);
   color: var(--black);
+  background-image: url(https://cdn.prod.website-files.com/66f21b00f5b67738c16bd030/6755f761307465d0d485c42d_dot-pattern.svg);
+  background-size: auto, auto;
 }
 
 header {
   width: 100%;
-  height: auto;
   font-family: "Geist Mono", monospace;
+}
+
+main {
+  padding: 0 50px;
 }
 
 nav {
@@ -59,13 +64,42 @@ nav .right li:hover {
 }
 
 .hero {
-  height: 100vh;
-  background-image: url(https://cdn.prod.website-files.com/66f21b00f5b67738c16bd030/6755f761307465d0d485c42d_dot-pattern.svg);
-  background-size: auto, auto;
-  justify-content: center;
-  align-items: center;
+  height: 300px;
   width: 100%;
-  padding-left: 16px;
-  padding-right: 16px;
   display: flex;
+  padding-top: 100px;
+}
+.hero .hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+.hero .hero__content .profile__picture {
+  width: 75px;
+  height: 75px;
+}
+.hero .hero__content .profile__picture img {
+  border-radius: 50px;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.hero .hero__content h1 {
+  font-weight: 500;
+}
+
+.work__content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  gap: 15px;
+}
+.work__content .work__card {
+  width: calc(33.333% - 15px);
+  height: 200px;
+  background-color: red;
 }/*# sourceMappingURL=styles.css.map */
