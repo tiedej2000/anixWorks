@@ -1,9 +1,9 @@
 :root {
-  --lightGrey: rgb(189, 189, 189);
+  --lightGrey: rgb(110, 110, 110);
   --darkGrey: rgb(75, 75, 75);
   --white: white;
   --black: #161616;
-  --small: clamp(0.6rem, 0.7vw, 1rem);
+  --small: clamp(0.6rem, 0.725vw, 1rem);
 }
 
 html {
@@ -59,7 +59,11 @@ nav .nav_list svg {
   vertical-align: middle;
   fill: var(--black);
 }
-nav .right li:hover {
+nav .right li {
+  display: flex;
+  gap: 4px;
+}
+nav .right li a:hover {
   text-decoration: underline;
 }
 
@@ -68,12 +72,13 @@ nav .right li:hover {
   width: 100%;
   display: flex;
   padding-top: 100px;
+  margin-bottom: 80px;
 }
 .hero .hero__content {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 .hero .hero__content .profile__picture {
   width: 75px;
@@ -89,17 +94,88 @@ nav .right li:hover {
 }
 .hero .hero__content h1 {
   font-weight: 500;
+  max-width: 70vw;
+  min-width: 400px;
 }
 
 .work__content {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   width: 100%;
   height: auto;
+}
+.work__content h2 {
+  font-size: clamp(0.8rem, 0.8vw, 1rem);
+  font-weight: 700;
+  color: var(--black);
+  text-decoration: underline;
+  font-family: "Geist Mono", monospace;
+}
+.work__content .work__cards {
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
 }
-.work__content .work__card {
+.work__content .work__cards .work__card {
   width: calc(33.333% - 15px);
-  height: 200px;
-  background-color: red;
+}
+.work__content .work__cards .work__card .work__img {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: -20px;
+}
+.work__content .work__cards .work__card .work__img img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  -o-object-fit: contain;
+     object-fit: contain;
+  animation: none;
+}
+.work__content .work__cards .work__card .work__img img:nth-child(1) {
+  opacity: 1;
+}
+.work__content .work__cards .work__card .work__img:hover img:nth-child(1) {
+  animation: rotateImages 3s infinite 0s;
+}
+.work__content .work__cards .work__card .work__img:hover img:nth-child(2) {
+  animation: rotateImages 3s infinite 1s;
+}
+.work__content .work__cards .work__card .work__img:hover img:nth-child(3) {
+  animation: rotateImages 3s infinite 2s;
+}
+@keyframes rotateImages {
+  0%, 33.33% {
+    opacity: 1;
+  }
+  33.34%, 100% {
+    opacity: 0;
+  }
+}
+.work__content .work__cards .work__card .work__info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.work__content .work__cards .work__card .work__info .heading {
+  font-weight: 700;
+  font-family: "Geist Mono", monospace;
+}
+.work__content .work__cards .work__card .work__info .heading a:hover {
+  text-decoration: underline;
+}
+.work__content .work__cards .work__card .work__info .subheader {
+  color: var(--darkGrey);
+}
+.work__content .work__cards .work__card .work__info .date {
+  font-family: "Geist Mono", monospace;
+  color: var(--lightGrey);
 }/*# sourceMappingURL=styles.css.map */

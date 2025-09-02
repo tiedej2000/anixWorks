@@ -1,12 +1,12 @@
 :root{
     //colors
-    --lightGrey: rgb(189, 189, 189);
+    --lightGrey: rgb(110, 110, 110);
     --darkGrey: rgb(75, 75, 75);
     --white: white;
     --black: #161616;
 
     //font sizes
-    --small: clamp(0.6rem, 0.7vw, 1rem);
+    --small: clamp(0.6rem, 0.725vw, 1rem);
 }
 
 //fonts
@@ -16,7 +16,8 @@ $geistMono: "Geist Mono", monospace;
 
 //paddings and margings
 
-$mb: 50px;
+$mbs: 80px;
+$mb: 10px;
 
 html{
     scroll-behavior: smooth;
@@ -77,7 +78,9 @@ nav{
 
     .right{
         li{
-            &:hover{
+            display: flex;
+            gap: 4px;
+            a:hover{
                 text-decoration: underline;
             }
         }
@@ -89,6 +92,7 @@ nav{
     width: 100%;
     display: flex;
     padding-top: 100px;
+    margin-bottom: $mbs;
 
     .hero__content{
         display: flex;
@@ -112,20 +116,100 @@ nav{
 
         h1{
             font-weight: 500;
+            max-width: 70vw;
+            min-width: 400px;
         }
     }
 }
 
 .work__content{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     width: 100%;
     height: auto;
-    gap: 15px;
 
-    .work__card{
-        width: calc(33.333% - 15px);
-        height: 200px;
-        background-color: red;
+    h2{
+        font-size: clamp(0.8rem, 0.8vw, 1rem);
+        font-weight: 700;
+        color: var(--black);
+        text-decoration: underline;
+        font-family: $geistMono;
+    }
+
+    .work__cards{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+
+        .work__card{
+            width: calc(33.333% - 15px);
+
+            .work__img{
+                position: relative;
+                height: 400px;
+                width: 100%;
+                border-radius: 8px;
+                overflow: hidden;
+                cursor: pointer;
+                margin-left: -20px; 
+
+                img{
+                   height: 100%; 
+                   width: 100%;
+                   position: absolute;
+                   top: 0;
+                   left: 0;
+                   transition: opacity 0.3s ease;
+                   opacity: 0;
+                   object-fit: contain;
+                   animation: none;
+                }
+
+                img:nth-child(1) {
+                    opacity: 1;
+                }
+
+                &:hover img:nth-child(1) {
+                    animation: rotateImages 3s infinite 0s;
+                }
+
+                &:hover img:nth-child(2) {
+                    animation: rotateImages 3s infinite 1s;
+                }
+
+                &:hover img:nth-child(3) {
+                    animation: rotateImages 3s infinite 2s;
+                }
+            }
+
+            @keyframes rotateImages {
+                0%, 33.33% { opacity: 1; }
+                33.34%, 100% { opacity: 0; }
+            }
+
+            .work__info{
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .heading{
+                    font-weight: 700;
+                    font-family: $geistMono;
+                    
+                    a:hover{
+                        text-decoration: underline;
+                    }
+                }
+
+                .subheader{
+                    color: var(--darkGrey);
+                }
+
+                .date{
+                   font-family: $geistMono;
+                   color: var(--lightGrey);
+                }
+            }
+        }
     }
 }
