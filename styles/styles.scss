@@ -7,6 +7,7 @@
 
     //font sizes
     --small: clamp(0.6rem, 0.725vw, 1rem);
+    --reg: clamp(1rem, 1vw, 1.2rem);
 }
 
 //fonts
@@ -16,8 +17,8 @@ $geistMono: "Geist Mono", monospace;
 
 //paddings and margings
 
-$mbs: 80px;
-$mb: 10px;
+$mbs: 60px;
+$mb: 15px;
 
 html{
     scroll-behavior: smooth;
@@ -40,7 +41,7 @@ header{
 }
 
 main{
-    padding: 0 50px;
+    padding: 0 50px 50px 50px;
 }
 
 nav{
@@ -51,9 +52,7 @@ nav{
     border-bottom: 1px solid var(--darkGrey);
     color:var(--darkGrey);
     font-size: var(--small);
-    position: fixed;
-    top: 10px;
-    left: 10px;
+    margin: 10px;
 
     .nav_list{
         display: flex;
@@ -88,11 +87,10 @@ nav{
 }
 
 .hero {
-    height: 300px;
+    height: auto;
     width: 100%;
     display: flex;
-    padding-top: 100px;
-    margin-bottom: $mbs;
+    margin: $mbs 0;
 
     .hero__content{
         display: flex;
@@ -116,7 +114,7 @@ nav{
 
         h1{
             font-weight: 500;
-            max-width: 70vw;
+            max-width: 90%;
             min-width: 400px;
         }
     }
@@ -132,37 +130,35 @@ nav{
         font-size: clamp(0.8rem, 0.8vw, 1rem);
         font-weight: 700;
         color: var(--black);
-        text-decoration: underline;
         font-family: $geistMono;
     }
 
     .work__cards{
         display: flex;
         flex-wrap: wrap;
-        gap: 15px;
+        gap: 30px;
+        font-size: var(--reg);
 
         .work__card{
-            width: calc(33.333% - 15px);
+            width: calc(33.333% - 20px);
 
             .work__img{
-                position: relative;
-                height: 400px;
+                display: grid;
                 width: 100%;
                 border-radius: 8px;
                 overflow: hidden;
                 cursor: pointer;
-                margin-left: -20px; 
+                box-shadow: 0 0 5px rgba(0,0,0,0.3);
+                margin: $mb 0;
 
                 img{
-                   height: 100%; 
-                   width: 100%;
-                   position: absolute;
-                   top: 0;
-                   left: 0;
-                   transition: opacity 0.3s ease;
-                   opacity: 0;
-                   object-fit: contain;
-                   animation: none;
+                    grid-area: 1 / 1;
+                    width: 100%;
+                    height: auto;
+                    transition: opacity 0.3s ease;
+                    opacity: 0;
+                    object-fit: contain;
+                    animation: none;
                 }
 
                 img:nth-child(1) {
@@ -195,9 +191,52 @@ nav{
                 .heading{
                     font-weight: 700;
                     font-family: $geistMono;
+                    display: flex;
+                    justify-content: space-between;
                     
                     a:hover{
                         text-decoration: underline;
+                    }
+                }
+
+                .type{
+                    display: flex;
+                    gap: 5px;
+
+                    .pill{
+                        position: relative;
+                        width: auto;
+                        padding: 5px 10px;
+                        border-radius: 50px;
+                        background-color: var(--black);
+                        font-size: clamp(0.6rem, 0.6vw, 0.8rem);
+                        color: var(--white);
+                        cursor: pointer;
+                        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+
+                        .modal{
+                            position: absolute;
+                            bottom: 150%;
+                            left: 50%;
+                            transform: translateX(-50%) scaleY(0);
+                            transform-origin: bottom center;
+                            background-color: var(--white);
+                            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+                            width: max-content;
+                            height: auto;
+                            padding: 10px;
+                            border-radius: 5px;
+                            opacity: 0;
+                            z-index: 9999;
+                            color: var(--black);
+                            text-align: center;
+                            transition: all 0.3s ease;
+
+                            &.show{
+                                opacity: 1;
+                                transform: translateX(-50%) scaleY(1);
+                            }
+                        }
                     }
                 }
 
@@ -208,6 +247,7 @@ nav{
                 .date{
                    font-family: $geistMono;
                    color: var(--lightGrey);
+                   font-size: var(--small);
                 }
             }
         }
