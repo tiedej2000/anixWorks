@@ -8,8 +8,21 @@
     --green: #65c466;
 
     //font sizes
-    --small: clamp(0.6rem, 0.725vw, 1rem);
+    --small: clamp(0.6rem, 0.775vw, 1rem);
     --reg: clamp(1rem, 1vw, 1.2rem);
+
+    --darkBoxShadowReg: 0 0 5px rgba(0, 0, 0, 0.1);
+    --darkBoxShadowBig: 0 0 10px rgba(0,0,0,0.4);
+}
+
+[data-theme="dark"] {
+    --lightGrey: rgb(240, 240, 240);
+    --darkGrey: rgb(224, 224, 224);
+    --white: #161616;
+    --black: white;
+
+    --darkBoxShadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    --darkBoxShadowBig: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 //fonts
@@ -30,6 +43,10 @@ html{
 
 a, label{
     cursor: none;
+
+    &.default-cursor{
+        cursor: pointer;
+    }
 }
 
 /* custom cursor */
@@ -53,6 +70,11 @@ a, label{
     font-size: var(--small);
 
     transition: border 0.3s ease, width 0.3s ease;
+
+    &.default-cursor{
+        opacity: 0;
+        display: none;
+    }
 
     &.el-hover{
         border: 3px solid var(--green);
@@ -92,9 +114,14 @@ body{
     overflow-x: hidden;
     background-color: var(--white);
     color: var(--black);
-    background-image: url(https://cdn.prod.website-files.com/66f21b00f5b67738c16bd030/6755f761307465d0d485c42d_dot-pattern.svg);
-    background-size: auto,auto;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='8' r='2' fill='grey'/></svg>");
+    background-repeat: repeat;
+    background-size: 5px 5px;
     cursor: none;
+
+    &.default-cursor{
+        cursor: default;
+    }
 }
 
 header{
@@ -136,6 +163,10 @@ nav{
             height: 25px;
             vertical-align: middle;
             fill: var(--black);
+
+            &:hover{
+                fill: var(--green);
+            }
         }
     }
 
@@ -172,14 +203,12 @@ nav{
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+                box-shadow: var(--darkBoxShadowReg);
             }
         }
 
         h1{
             font-weight: 500;
-            max-width: 90%;
-            min-width: 400px;
         }
     }
 }
@@ -193,7 +222,7 @@ nav{
     h2{
         font-size: clamp(0.8rem, 0.8vw, 1rem);
         font-weight: 700;
-        color: var(--black);
+        color: var(--darkGrey);
         font-family: $geistMono;
     }
 
@@ -211,7 +240,7 @@ nav{
                 width: 100%;
                 border-radius: $br;
                 overflow: hidden;
-                box-shadow: 0 0 3px rgba(0,0,0,0.15);
+                box-shadow: var(--darkBoxShadowReg);
                 margin: $mb 0;
 
                 img{
@@ -274,7 +303,7 @@ nav{
                         background-color: var(--black);
                         font-size: clamp(0.6rem, 0.6vw, 0.8rem);
                         color: var(--white);
-                        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+                        box-shadow: var(--darkBoxShadowReg);
 
                         .modal{
                             position: absolute;
@@ -283,7 +312,7 @@ nav{
                             transform: translateX(-50%) scaleY(0);
                             transform-origin: bottom center;
                             background-color: var(--white);
-                            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+                            box-shadow: var(--darkBoxShadowReg);
                             width: max-content;
                             height: auto;
                             padding: 10px;
@@ -325,7 +354,7 @@ nav{
     height: 50px;
     background-color: var(--white);
     border-radius: 50px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    box-shadow: var(--darkBoxShadowBig);
 
     display: grid;
     place-content: center;
@@ -333,6 +362,10 @@ nav{
     .accesibility-icon{
         display: grid;
         place-content: center;
+        
+        svg{
+            fill: var(--black);
+        }
     }
 
     .accesibility-modal{
@@ -346,7 +379,7 @@ nav{
         color: var(--black);
         padding: 10px;
         border-radius: $br;
-        box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        box-shadow: var(--darkBoxShadowReg);
         opacity: 0;
         transition: all 0.3s ease;
 
@@ -362,7 +395,7 @@ nav{
 
             .heading{
                 font-weight: 700;
-                padding-bottom: $mb;
+                padding-bottom: 5px;
                 border-bottom: 1px solid var(--lightGrey);
                 align-items: center;
 
@@ -421,6 +454,42 @@ nav{
 
             .checkbox:checked + .switch{
                 background-color: hsl(135, 58%, 49%);
+            }
+        }
+    }
+}
+
+footer{
+    width: calc(100% - 100px);
+    height: auto;
+    background-color: var(--white);
+    box-shadow: var(--darkBoxShadowReg);
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: $br;
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--reg);
+
+    .footer-left{
+        .copyright{
+            font-size: var(--small);
+        }
+    }
+
+    .footer-right{
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        li svg{
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            fill: var(--black);
+
+            &:hover{
+                fill: var(--green);
             }
         }
     }

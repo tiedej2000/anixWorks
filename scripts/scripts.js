@@ -67,3 +67,42 @@ accesibilityIcon.addEventListener('click', () =>{
 function closeModal() {
   document.querySelector('.accesibility-modal').classList.remove('show');
 }
+
+
+/* dark mode */
+
+const darkModeCheckbox = document.querySelector('.accesibility-modal #night_mode-checkbox');
+
+if (darkModeCheckbox) {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    darkModeCheckbox.checked = true;
+  }
+
+  darkModeCheckbox.addEventListener('change', function () {
+    if (this.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    }
+  });
+}
+
+const customCursorCheckbox = document.querySelector('.accesibility-modal #cursor-checkbox');
+const pointerEls = document.querySelectorAll('a, label, .work__img');
+
+customCursorCheckbox.addEventListener('change', function () {
+  if (this.checked) {
+    document.body.classList.add('default-cursor');
+    document.querySelector('.cursor').classList.add('default-cursor');
+    pointerEls.forEach(el => el.classList.add('default-cursor'));
+  } else {
+    document.body.classList.remove('default-cursor');
+    document.querySelector('.cursor').classList.remove('default-cursor');
+    pointerEls.forEach(el => el.classList.remove('default-cursor'));
+  }
+});
+
+
