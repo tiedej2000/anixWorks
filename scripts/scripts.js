@@ -106,3 +106,89 @@ customCursorCheckbox.addEventListener('change', function () {
 });
 
 
+/* canvas code 
+(() => {
+    const c = document.getElementById('dots-canvas');
+    if (!c) return;
+
+    const ctx = c.getContext('2d');
+    const DPR = 1; // lock to CSS pixels for consistent visual size across systems
+
+    // Simple, tweakable params
+    const SPACING = 10;   // px between dots
+    const BASE = 1;     // base dot radius
+    const MAX = 6.0;      // max radius near cursor
+    const INFLUENCE = 42; // px influence radius
+
+    const targetPointer = { x: 0, y: 0, active: false };
+    const renderPointer = { x: 0, y: 0, active: false };
+    const EASING = 0.4; // 0..1, higher = less lag
+
+    // Cache dots color once so it doesn't change with theme
+    function getCssVar(name) {
+        return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    }
+    const DOT_COLOR = getCssVar('--dotsColor') || '#e4e4e4ff';
+
+    function resize() {
+        c.width = Math.max(1, Math.round(window.innerWidth));
+        c.height = Math.max(1, Math.round(window.innerHeight));
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        draw();
+    }
+
+    function radiusAt(x, y) {
+        if (!renderPointer.active) return BASE;
+        const dx = renderPointer.x - x;
+        const dy = renderPointer.y - y;
+        const d = Math.hypot(dx, dy);
+        if (d >= INFLUENCE) return BASE;
+        const t = 1 - d / INFLUENCE;
+        const ease = t * t * (3 - 2 * t); // smoothstep
+        return BASE + (MAX - BASE) * ease;
+    }
+
+    function getCssVar(name) {
+        return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    }
+
+    function draw() {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        ctx.clearRect(0, 0, w, h); // body background (white) shows through
+        ctx.fillStyle = DOT_COLOR;
+        for (let y = 0; y <= h; y += SPACING) {
+            for (let x = 0; x <= w; x += SPACING) {
+                ctx.beginPath();
+                ctx.arc(x, y, radiusAt(x, y), 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+    }
+
+    function setPointer(e) {
+        targetPointer.x = e.clientX;
+        targetPointer.y = e.clientY;
+        targetPointer.active = true;
+    }
+
+    window.addEventListener('resize', resize);
+    window.addEventListener('pointermove', (e) => { setPointer(e); });
+    window.addEventListener('pointerleave', () => { targetPointer.active = false; });
+
+    function animate() {
+        // interpolate render pointer toward target
+        const dx = targetPointer.x - renderPointer.x;
+        const dy = targetPointer.y - renderPointer.y;
+        renderPointer.x += dx * EASING;
+        renderPointer.y += dy * EASING;
+        renderPointer.active = targetPointer.active;
+        draw();
+        requestAnimationFrame(animate);
+    }
+
+    resize();
+    animate();
+})();
+
+*/

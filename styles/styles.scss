@@ -10,6 +10,7 @@
     //font sizes
     --small: clamp(0.6rem, 0.775vw, 1rem);
     --reg: clamp(1rem, 1vw, 1.2rem);
+    --big: clamp(2rem, 1.5vw, 2rem);
 
     --darkBoxShadowReg: 0 0 5px rgba(0, 0, 0, 0.1);
     --darkBoxShadowBig: 0 0 10px rgba(0,0,0,0.4);
@@ -21,7 +22,7 @@
     --white: #161616;
     --black: white;
 
-    --darkBoxShadow: 0 0 5px rgba(255, 255, 255, 0.1);
+    --darkBoxShadowReg: 0 0 5px rgba(255, 255, 255, 0.1);
     --darkBoxShadowBig: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
@@ -90,8 +91,8 @@ a, label{
             position: absolute;
             left: 50%;
             top: 50%;
-            width: 85%;
-            height: 85%;
+            width: 75%;
+            height: 75%;
             border-radius: 50%;
             border: 2px solid var(--green);
             border-top-color: transparent;
@@ -118,11 +119,21 @@ body{
     background-repeat: repeat;
     background-size: 5px 5px;
     cursor: none;
+    position: relative;
 
     &.default-cursor{
         cursor: default;
     }
 }
+
+/*
+#dots-canvas{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+*/
 
 header{
     width: 100%;
@@ -196,7 +207,29 @@ nav{
         .profile__picture{
             width: 75px;
             height: 75px;
+            transition: all 0.3 ease;
+            position: relative;
             
+            &::after{
+                position: absolute;
+                content: '😵‍💫';
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: 110%;
+                width: 25px;
+                height: 25px;
+                background-color: var(--white);
+                box-shadow: var(--darkBoxShadowReg);
+                display: grid;
+                place-content: center;
+                border-radius: 50px;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+             &:hover::after {
+                opacity: 1;
+            }
 
             img{
                 border-radius: 50px;
@@ -204,12 +237,27 @@ nav{
                 height: 100%;
                 object-fit: cover;
                 box-shadow: var(--darkBoxShadowReg);
+
+                &:hover{
+                    animation: spin 2s linear infinite;
+                }
             }
         }
 
         h1{
+            font-size: var(--big);
             font-weight: 500;
         }
+    }
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
     }
 }
 
@@ -493,4 +541,11 @@ footer{
             }
         }
     }
+}
+
+
+/* mobile */
+
+@media(max-width: 599px){
+
 }
