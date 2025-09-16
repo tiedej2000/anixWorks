@@ -106,6 +106,17 @@ customCursorCheckbox.addEventListener('change', function () {
 });
 
 
+
+/*mobile nav */
+
+const navToggler = document.querySelector('.nav-toggler');
+const navExpanded = document.querySelector('.nav-expanded')
+    
+navToggler.addEventListener('click', () => {
+  navToggler.classList.toggle('active')
+  navExpanded.classList.toggle('show')
+})
+
 /* canvas code 
 (() => {
     const c = document.getElementById('dots-canvas');

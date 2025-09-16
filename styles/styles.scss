@@ -118,7 +118,7 @@ body{
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='8' r='2' fill='grey'/></svg>");
     background-repeat: repeat;
     background-size: 5px 5px;
-    cursor: none;
+    cursor: default;
     position: relative;
 
     &.default-cursor{
@@ -144,7 +144,7 @@ main{
     padding: 0 50px 50px 50px;
 }
 
-nav{
+.nav-desktop{
     width: calc(100% - 20px);
     display: flex;
     justify-content: space-between;
@@ -188,6 +188,82 @@ nav{
             a:hover{
                 text-decoration: underline;
             }
+        }
+    }
+}
+
+.nav-mobile{
+    display: none;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    margin: 10px;
+    padding: 10px;
+    height: auto;
+    background-color: var(--white);
+    box-shadow: var(--darkBoxShadowReg);
+    border-radius: $br;
+
+    .header-logo{
+        font-size: var(--small);
+    }
+
+    .nav-header{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav-toggler{
+            appearance: none;
+            border: none;
+            background: none;
+            padding: 8px;
+            position: relative;
+
+            .navbar-toggler-icon{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 20px;
+                width: 30px;
+
+                i{
+                    display: block;
+                    width: 20px;
+                    height: 2px;
+                    background: var(--black);
+                    margin: 2px 0;
+                    transition: transform 0.3s ease;
+                }
+            }
+
+            &.active,
+            &[aria-expanded="true"] {
+                .navbar-toggler-icon i {
+                    &:first-child {
+                        transform: rotate(45deg) translate(2px, 2px);
+                    }
+            
+                    &:last-child {
+                        transform: rotate(-45deg) translate(2px, -2px);
+                    }
+                }
+            }
+        }
+    }
+
+    .nav-expanded{
+        display: none;
+        height: 100%;
+
+        &.show{
+            display: flex;
+            height: 200px;
+            width: 100%;
+            background-color: red;
+
         }
     }
 }
@@ -546,6 +622,18 @@ footer{
 
 /* mobile */
 
-@media(max-width: 599px){
+@media(max-width: 768px){
+    body{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    .nav-desktop{
+        display: none;
+        max-height: 0;
+        pointer-events: none;
+    }
 
+    .nav-mobile{
+        display: flex;
+    }
 }
