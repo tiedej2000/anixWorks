@@ -111,10 +111,13 @@ customCursorCheckbox.addEventListener('change', function () {
 
 const navToggler = document.querySelector('.nav-toggler');
 const navExpanded = document.querySelector('.nav-expanded')
+
     
 navToggler.addEventListener('click', () => {
   navToggler.classList.toggle('active')
   navExpanded.classList.toggle('show')
+
+  document.body.classList.toggle('nav-shown')
 })
 
 /* canvas code 
