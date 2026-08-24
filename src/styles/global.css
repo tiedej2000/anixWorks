@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --farbe-hintergrund: #F4F4F2;
+  --farbe-flaeche: #FFFFFF;
+  --farbe-flaeche-alt: #F6F6F4;
+  --farbe-text: #17171A;
+  --farbe-text-gedaempft: #45454A;
+  --farbe-text-schwach: #8E8E88;
+  --farbe-text-sehr-schwach: #A6A6A0;
+  --farbe-text-kaum: #B8B8B2;
+  --farbe-text-minimal: #B4B4AE;
+  --farbe-rand: #E2E2DE;
+  --farbe-rand-stark: #DCDCD6;
+  --farbe-trennlinie: #D3D3CD;
+  --farbe-akzent: #EC3013;
+  --schrift-serif: 'Instrument Serif', serif;
+  --schrift-mono: 'JetBrains Mono', monospace;
+  --radius-karte: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--farbe-hintergrund);
+  color: var(--farbe-text);
+  font-family: 'Archivo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--farbe-text);
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(236, 48, 19, .14);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

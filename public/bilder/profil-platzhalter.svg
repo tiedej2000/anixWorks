@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <defs>
+    <pattern id="punkte" width="36" height="36" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="4" fill="#E1E1DC" />
+    </pattern>
+  </defs>
+  <rect x="2" y="2" width="896" height="1096" fill="#F6F6F4" stroke="#E2E2DE" stroke-width="4" />
+  <rect x="2" y="2" width="896" height="1096" fill="url(#punkte)" />
+  <text x="48" y="1032" font-family="'JetBrains Mono', monospace" font-size="28" letter-spacing="4" fill="#A6A6A0">PORTRÄT 900×1100</text>
+</svg>

@@ -1,0 +1,35 @@
+---
+interface Props {
+  spalten: number;
+  zeilen: number;
+  schriftgroesse: number;
+  zeichen?: string;
+}
+
+const { spalten, zeilen, schriftgroesse, zeichen = '+' } = Astro.props;
+const zeilenListe = Array.from({ length: zeilen });
+const spaltenListe = Array.from({ length: spalten });
+---
+
+<div class="ascii-feld" style={`font-size:${schriftgroesse}px;`}>
+  {zeilenListe.map(() => (
+    <div class="ascii-feld-zeile">
+      {spaltenListe.map(() => <span class="ascii-feld-zeichen">{zeichen}</span>)}
+    </div>
+  ))}
+</div>
+
+<style>
+  .ascii-feld {
+    font-family: var(--schrift-mono);
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--farbe-rand-stark);
+    user-select: none;
+  }
+
+  .ascii-feld-zeile {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
