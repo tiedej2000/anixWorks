@@ -1,4 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+// Sora – alle Gewichte (normal + italic)
+@font-face{ font-family: 'Sora'; font-weight: 100; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Thin.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 100; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-ThinItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 200; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-ExtraLight.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 200; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-ExtraLightItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 300; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Light.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 300; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-LightItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Regular.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 400; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-Italic.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 500; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Medium.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 500; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-MediumItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 600; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-SemiBold.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 600; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-SemiBoldItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 700; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Bold.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 700; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-BoldItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 800; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-ExtraBold.otf') format('opentype'); }
+@font-face{ font-family: 'Sora'; font-weight: 800; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-ExtraBoldItalic.otf') format('opentype'); }
+
+// Satoshi – alle Gewichte (normal + italic)
+@font-face{ font-family: 'Satoshi'; font-weight: 300; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Light.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 300; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-LightItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Regular.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 400; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Italic.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 500; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Medium.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 500; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-MediumItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 700; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Bold.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 700; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-BoldItalic.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 900; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Black.otf') format('opentype'); }
+@font-face{ font-family: 'Satoshi'; font-weight: 900; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-BlackItalic.otf') format('opentype'); }
 
 :root{
     --farbe-hintergrund: #F4F4F2;
@@ -14,15 +42,15 @@
     --farbe-rand-stark: #DCDCD6;
     --farbe-trennlinie: #D3D3CD;
     --farbe-akzent: #EC3013;
-    --schrift-serif: 'Instrument Serif', serif;
-    --schrift-mono: 'JetBrains Mono', monospace;
+    --schrift-serif: 'Sora', sans-serif;
+    --schrift-mono: 'Sora', sans-serif;
     --radius-karte: 14px;
 }
 
 body{
     background: var(--farbe-hintergrund);
     color: var(--farbe-text);
-    font-family: 'Archivo', sans-serif;
+    font-family: 'Sora', sans-serif;
     overflow-x: clip;
 }
 
@@ -83,7 +111,8 @@ a{
 
         .profile-img{
             width: auto;
-            height: 200px;
+            height: 12.5vh;
+            min-height: 100px;
             border-radius: calc(var(--radius-karte) - 4px);
             object-fit: cover;
         }
@@ -93,7 +122,7 @@ a{
 
             .profile-name{
                 margin: 0;
-                font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+                font-size: clamp(1.5rem, 2vw, 2rem);
                 font-weight: 500;
                 line-height: 1.05;
             }
@@ -113,7 +142,7 @@ a{
     .profile-desc{
         margin: 40px 0 0;
         width: 100%;
-        font-size: 15px;
+        font-size: clamp(0.6rem, 0.8vw, 0.8rem);
         line-height: 1.75;
         color: var(--farbe-text-gedaempft);
         text-wrap: pretty;
@@ -131,9 +160,7 @@ a{
     .tools-list{
         display: flex;
         align-items: center;
-        gap: 10px;
         width: 100%;
-        padding: 14px 18px;
         background: var(--farbe-hintergrund);
         border: 1px solid var(--farbe-rand);
         border-radius: 16px;
