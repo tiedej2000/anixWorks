@@ -11,16 +11,16 @@ const zeilenListe = Array.from({ length: zeilen });
 const spaltenListe = Array.from({ length: spalten });
 ---
 
-<div class="ascii-feld" style={`font-size:${schriftgroesse}px;`}>
+<div class="ascii" style={`font-size:${schriftgroesse}px;`}>
   {zeilenListe.map(() => (
-    <div class="ascii-feld-zeile">
-      {spaltenListe.map(() => <span class="ascii-feld-zeichen">{zeichen}</span>)}
+    <div class="ascii-row">
+      {spaltenListe.map(() => <span class="ascii-char">{zeichen}</span>)}
     </div>
   ))}
 </div>
 
 <style>
-  .ascii-feld {
+  .ascii {
     font-family: var(--schrift-mono);
     font-weight: 500;
     line-height: 1.45;
@@ -28,7 +28,7 @@ const spaltenListe = Array.from({ length: spalten });
     user-select: none;
   }
 
-  .ascii-feld-zeile {
+  .ascii-row {
     display: flex;
     justify-content: space-between;
   }

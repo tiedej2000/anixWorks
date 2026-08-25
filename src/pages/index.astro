@@ -1,544 +1,186 @@
 ---
-import Basis from '../layouts/Basis.astro';
+import Layout from '../layouts/Layout.astro';
 import AsciiFeld from '../components/AsciiFeld.astro';
 ---
 
-<Basis titel="Jonas Keller — Webdesign & Frontend">
-  <div class="seite">
-    <div class="raster-linien" aria-hidden="true">
-      <span class="raster-linie" style="left:648px"></span>
-      <span class="raster-linie" style="left:1108px"></span>
-      <span class="raster-linie" style="left:1368px"></span>
+<Layout titel="Jonas Keller — Webdesign & Frontend">
+    <div class="page">
+        <section class="profile-col">
+            <div class="profile-head">
+                <span>Webdesign Frontend</span>
+                <span>Offenburg</span>
+            </div>
+
+            <div class="profile-intro">
+                <img
+                    class="profile-img"
+                    src="/bilder/profile_img.png"
+                    alt="Porträtfoto von Justin TIede"
+                    width="164"
+                    height="206"
+                />
+                <div class="profile-info">
+                    <h1 class="profile-name">Justin Tiede</h1>
+                    <p class="profile-status">
+                        Freiberuflich<br />
+                        seit 2018<br />
+                    </p>
+                </div>
+            </div>
+
+            <p class="profile-desc">
+                Ich gestalte und baue Websites für Studios, Agenturen und kleine Marken. Mein Fokus liegt
+                auf klaren Strukturen, ruhiger Typografie und Seiten, die schnell laden. Seit acht Jahren
+                arbeite ich zwischen Entwurf und Umsetzung, meistens allein, gelegentlich im Team. Am
+                liebsten übernehme ich ein Projekt <em class="profile-em">vollständig</em>, von der
+                ersten Skizze bis zum Livegang.
+            </p>
+
+            <p class="tools-title">Werkzeuge</p>
+            <div class="tools-list">
+                <img class="tool" src="/tools/figma.png" alt="Figma" title="Figma" width="48" height="48" />
+                <img class="tool" src="/tools/photoshop.png" alt="Photoshop" title="Photoshop" width="48" height="48" />
+                <img class="tool" src="/tools/illustrator.png" alt="Illustrator" title="Illustrator" width="48" height="48" />
+                <img class="tool" src="/tools/premiere.png" alt="Premiere Pro" title="Premiere Pro" width="48" height="48" />
+                <img class="tool" src="/tools/blender.png" alt="Blender" title="Blender" width="48" height="48" />
+                <img class="tool" src="/tools/claude.png" alt="Claude" title="Claude" width="48" height="48" />
+            </div>
+
+            <div class="sig">
+                <AsciiFeld spalten={24} zeilen={4} schriftgroesse={13} />
+            </div>
+
+            <div class="profile-foot">
+                <a class="contact-email" href="mailto:tiedejustin@protonmail.com">tiedejustin@protonmail.com</a>
+                <div class="social">
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">GITHUB</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-col">
+            <div class="project-nav" aria-hidden="true">
+                <span class="project-nav-dot" title="strafe"></span>
+                <span class="project-nav-dot" title="nikiszeug"></span>
+                <span class="project-nav-dot" title="Feldstudie"></span>
+                <span class="project-nav-dot" title="Studio Halm"></span>
+            </div>
+
+            <div class="hero">
+                <AsciiFeld spalten={44} zeilen={9} schriftgroesse={21} />
+                <p class="hero-text">
+                    Entwurf und Umsetzung aus einer Hand — ruhige Seiten, die <em class="hero-em">schnell</em> laden.
+                </p>
+            </div>
+
+            <div class="index-head">
+                <span>Index — Ausgewählte Arbeiten</span>
+                <span>04 Einträge</span>
+            </div>
+
+            <div class="project-list">
+            <div class="col-lines" aria-hidden="true">
+                <span class="col-line col-line--left"></span>
+                <span class="col-line col-line--divider"></span>
+                <span class="col-line col-line--right"></span>
+            </div>
+
+            <article class="project">
+                <div class="project-img-frame">
+                    <img
+                        class="project-img"
+                        src="/projects/strafe-site.png"
+                        alt="strafe — Skatewear-Onlineshop"
+                        width="1600"
+                        height="1000"
+                    />
+                </div>
+                <div class="project-info">
+                    <div class="project-text">
+                        <h2 class="project-title">strafe</h2>
+                        <p class="project-desc">
+                            Konzept und Umsetzung eines Skatewear-Onlineshops als Bachelorarbeit —
+                            von der Markenidee bis zum funktionierenden Store mit klarer Bildsprache
+                            und rauem, straßennahem Auftritt.
+                        </p>
+                    </div>
+                    <p class="project-meta">2026<br />Astro, JS<br />HTML, SCSS</p>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-img-frame">
+                    <img
+                        class="project-img"
+                        src="/projects/nikis.png"
+                        alt="nikiszeug — Fotogalerie für den Fotografen Nikita Bitsch"
+                        width="1600"
+                        height="1000"
+                    />
+                </div>
+                <div class="project-info">
+                    <div class="project-text">
+                        <h2 class="project-title">nikiszeug</h2>
+                        <p class="project-desc">
+                            Fotogalerie für den Fotografen Nikita Bitsch — eine ruhige, bildzentrierte
+                            Website, die seine Arbeiten in den Vordergrund stellt.
+                        </p>
+                    </div>
+                    <p class="project-meta">2026<br />JS<br />HTML, SCSS</p>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-img-frame">
+                    <img
+                        class="project-img"
+                        src="/projects/lafostra.png"
+                        alt="Digitales Magazin Feldstudie"
+                        width="1600"
+                        height="1000"
+                    />
+                </div>
+                <div class="project-info">
+                    <div class="project-text">
+                        <h2 class="project-title">Feldstudie</h2>
+                        <p class="project-desc">
+                            Digitales Magazin über Landwirtschaft, mit eigenem Redaktionssystem.
+                        </p>
+                    </div>
+                    <p class="project-meta">2024<br />Design &amp; Frontend<br />Next.js</p>
+                </div>
+            </article>
+
+            <article class="project project--last">
+                <div class="project-img-frame">
+                    <img
+                        class="project-img"
+                        src="/projects/buschmann.png"
+                        alt="Portfolioseite für Studio Halm"
+                        width="1600"
+                        height="1000"
+                    />
+                </div>
+                <div class="project-info">
+                    <div class="project-text">
+                        <h2 class="project-title">Studio Halm</h2>
+                        <p class="project-desc">
+                            Portfolioseite für ein Fotografieduo, gebaut für sehr große Bilddateien.
+                        </p>
+                    </div>
+                    <p class="project-meta">2024<br />Art Direction<br />Framer</p>
+                </div>
+            </article>
+            </div>
+
+            <section class="outro">
+                <AsciiFeld spalten={44} zeilen={5} schriftgroesse={21} />
+                <div class="outro-contact">
+                    <a class="outro-email" href="mailto:tiedejustin@protonmail.com">tiedejustin@protonmail.com</a>
+                    <span class="outro-date">Ende — 2026</span>
+                </div>
+            </section>
+        </section>
     </div>
-
-    <aside class="profil-spalte">
-      <div class="profil-kopfzeile">
-        <span>Webdesign &amp; Frontend</span>
-        <span>Berlin</span>
-      </div>
-
-      <div class="profil-vorstellung">
-        <img
-          class="profil-bild"
-          src="/bilder/profil-platzhalter.svg"
-          alt="Porträtfoto von Jonas Keller"
-          width="164"
-          height="206"
-        />
-        <div class="profil-info">
-          <h1 class="profil-name">Jonas<br />Keller</h1>
-          <p class="profil-status">
-            Freiberuflich<br />
-            seit 2018<br />
-            <span class="profil-verfuegbarkeit">
-              Frei ab 10/26<span class="profil-verfuegbarkeit-punkt"></span>
-            </span>
-          </p>
-        </div>
-      </div>
-
-      <p class="profil-beschreibung">
-        Ich gestalte und baue Websites für Studios, Agenturen und kleine Marken. Mein Fokus liegt
-        auf klaren Strukturen, ruhiger Typografie und Seiten, die schnell laden. Seit acht Jahren
-        arbeite ich zwischen Entwurf und Umsetzung, meistens allein, gelegentlich im Team. Am
-        liebsten übernehme ich ein Projekt <em class="profil-betonung">vollständig</em>, von der
-        ersten Skizze bis zum Livegang.
-      </p>
-
-      <p class="werkzeuge-titel">Werkzeuge</p>
-      <div class="werkzeuge-liste">
-        <span class="werkzeug" title="Figma">Fg</span>
-        <span class="werkzeug" title="Framer">Fr</span>
-        <span class="werkzeug" title="Webflow">Wf</span>
-        <span class="werkzeug" title="HTML">&lt;/&gt;</span>
-        <span class="werkzeug" title="CSS">CSS</span>
-        <span class="werkzeug" title="JavaScript">JS</span>
-        <span class="werkzeug" title="React">Re</span>
-        <span class="werkzeuge-trenner"></span>
-        <span class="werkzeug" title="Git">Git</span>
-        <span class="werkzeug" title="Deutsch / Englisch">DE/EN</span>
-      </div>
-
-      <div class="signatur-bereich">
-        <AsciiFeld spalten={24} zeilen={4} schriftgroesse={13} />
-      </div>
-
-      <div class="profil-fusszeile">
-        <a class="kontakt-email" href="mailto:hallo@jonaskeller.de">hallo@jonaskeller.de</a>
-        <nav class="sozial-links">
-          <a href="#">LI</a>
-          <a href="#">IG</a>
-          <a href="#">GH</a>
-        </nav>
-      </div>
-    </aside>
-
-    <main class="inhalt-spalte">
-      <nav class="projekt-navigation" aria-hidden="true">
-        <span class="projekt-navigation-punkt" title="Atelier Nord"></span>
-        <span class="projekt-navigation-punkt" title="Kadenz Kaffee"></span>
-        <span class="projekt-navigation-punkt" title="Feldstudie"></span>
-        <span class="projekt-navigation-punkt" title="Studio Halm"></span>
-      </nav>
-
-      <div class="hero-bereich">
-        <AsciiFeld spalten={44} zeilen={9} schriftgroesse={21} />
-        <p class="hero-text">
-          Entwurf und Umsetzung aus einer Hand — ruhige Seiten, die <em class="hero-betonung">schnell</em> laden.
-        </p>
-      </div>
-
-      <div class="projekt-index-kopf">
-        <span>Index — Ausgewählte Arbeiten</span>
-        <span>04 Einträge</span>
-      </div>
-
-      <article class="projekt">
-        <div class="projekt-bild-rahmen">
-          <span class="projekt-nummer">01</span>
-          <img
-            class="projekt-bild"
-            src="/bilder/projekt-platzhalter.svg"
-            alt="Website für Atelier Nord"
-            width="1600"
-            height="1000"
-          />
-        </div>
-        <div class="projekt-details">
-          <div class="projekt-text">
-            <h2 class="projekt-titel">Atelier Nord</h2>
-            <p class="projekt-beschreibung">
-              Website und visuelle Identität für ein Architekturbüro mit Sitz in Hamburg.
-            </p>
-          </div>
-          <p class="projekt-meta">2025<br />Design &amp; Umsetzung<br />Webflow</p>
-        </div>
-      </article>
-
-      <article class="projekt">
-        <div class="projekt-bild-rahmen">
-          <span class="projekt-nummer">02</span>
-          <img
-            class="projekt-bild"
-            src="/bilder/projekt-platzhalter.svg"
-            alt="Onlineshop für Kadenz Kaffee"
-            width="1600"
-            height="1000"
-          />
-        </div>
-        <div class="projekt-details">
-          <div class="projekt-text">
-            <h2 class="projekt-titel">Kadenz Kaffee</h2>
-            <p class="projekt-beschreibung">
-              Onlineshop und Verpackungssystem für eine kleine Rösterei.
-            </p>
-          </div>
-          <p class="projekt-meta">2025<br />Webdesign<br />Shopify</p>
-        </div>
-      </article>
-
-      <article class="projekt">
-        <div class="projekt-bild-rahmen">
-          <span class="projekt-nummer">03</span>
-          <img
-            class="projekt-bild"
-            src="/bilder/projekt-platzhalter.svg"
-            alt="Digitales Magazin Feldstudie"
-            width="1600"
-            height="1000"
-          />
-        </div>
-        <div class="projekt-details">
-          <div class="projekt-text">
-            <h2 class="projekt-titel">Feldstudie</h2>
-            <p class="projekt-beschreibung">
-              Digitales Magazin über Landwirtschaft, mit eigenem Redaktionssystem.
-            </p>
-          </div>
-          <p class="projekt-meta">2024<br />Design &amp; Frontend<br />Next.js</p>
-        </div>
-      </article>
-
-      <article class="projekt projekt--letztes">
-        <div class="projekt-bild-rahmen">
-          <span class="projekt-nummer">04</span>
-          <img
-            class="projekt-bild"
-            src="/bilder/projekt-platzhalter.svg"
-            alt="Portfolioseite für Studio Halm"
-            width="1600"
-            height="1000"
-          />
-        </div>
-        <div class="projekt-details">
-          <div class="projekt-text">
-            <h2 class="projekt-titel">Studio Halm</h2>
-            <p class="projekt-beschreibung">
-              Portfolioseite für ein Fotografieduo, gebaut für sehr große Bilddateien.
-            </p>
-          </div>
-          <p class="projekt-meta">2024<br />Art Direction<br />Framer</p>
-        </div>
-      </article>
-
-      <section class="abschluss-bereich">
-        <AsciiFeld spalten={44} zeilen={5} schriftgroesse={21} />
-        <div class="abschluss-kontakt">
-          <a class="abschluss-email" href="mailto:hallo@jonaskeller.de">hallo@jonaskeller.de</a>
-          <span class="abschluss-datum">Ende — 2026</span>
-        </div>
-      </section>
-    </main>
-  </div>
-</Basis>
-
-<style>
-  .seite {
-    position: relative;
-    width: 1440px;
-    min-width: 1440px;
-    margin: 0 auto;
-    background: var(--farbe-hintergrund);
-    display: grid;
-    grid-template-columns: 576px 864px;
-  }
-
-  .raster-linien {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .raster-linie {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    border-left: 1px dashed var(--farbe-trennlinie);
-  }
-
-  /* Profilspalte */
-
-  .profil-spalte {
-    position: sticky;
-    top: 24px;
-    z-index: 1;
-    align-self: start;
-    margin: 24px;
-    height: calc(100vh - 48px);
-    overflow-y: auto;
-    scrollbar-width: none;
-    padding: 36px 40px 32px;
-    background: var(--farbe-flaeche);
-    border: 1px solid var(--farbe-rand-stark);
-    border-radius: var(--radius-karte);
-    box-shadow: 0 1px 2px rgba(23, 23, 26, 0.04);
-    display: flex;
-    flex-direction: column;
-  }
-
-  .profil-kopfzeile {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 14px;
-    border-bottom: 1px dashed var(--farbe-trennlinie);
-    font-family: var(--schrift-mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--farbe-text-schwach);
-  }
-
-  .profil-vorstellung {
-    display: flex;
-    gap: 28px;
-    align-items: flex-start;
-    margin-top: 36px;
-  }
-
-  .profil-bild {
-    width: 164px;
-    height: 206px;
-    border: 1px solid var(--farbe-rand);
-    border-radius: calc(var(--radius-karte) - 4px);
-    object-fit: cover;
-  }
-
-  .profil-info {
-    padding-top: 4px;
-  }
-
-  .profil-name {
-    margin: 0;
-    font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.05;
-  }
-
-  .profil-status {
-    margin: 14px 0 0;
-    font-family: var(--schrift-mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--farbe-text-schwach);
-    line-height: 1.9;
-  }
-
-  .profil-verfuegbarkeit {
-    color: var(--farbe-text);
-  }
-
-  .profil-verfuegbarkeit-punkt {
-    display: inline-block;
-    width: 6px;
-    height: 6px;
-    border-radius: 999px;
-    background: var(--farbe-akzent);
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-
-  .profil-beschreibung {
-    margin: 34px 0 0;
-    max-width: 420px;
-    font-size: 15px;
-    line-height: 1.75;
-    color: var(--farbe-text-gedaempft);
-    text-wrap: pretty;
-  }
-
-  .profil-betonung {
-    font-family: var(--schrift-serif);
-    font-style: italic;
-    font-size: 17px;
-  }
-
-  .werkzeuge-titel {
-    margin: 28px 0 12px;
-    font-family: var(--schrift-mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--farbe-text-schwach);
-  }
-
-  .werkzeuge-liste {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    width: fit-content;
-    padding: 8px 10px;
-    background: var(--farbe-hintergrund);
-    border: 1px solid var(--farbe-rand);
-    border-radius: 16px;
-    box-shadow: 0 1px 2px rgba(23, 23, 26, 0.05);
-  }
-
-  .werkzeug {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--farbe-flaeche);
-    border: 1px solid var(--farbe-rand);
-    border-radius: 10px;
-    font-family: var(--schrift-mono);
-    font-size: 11px;
-    letter-spacing: 0.02em;
-    color: var(--farbe-text-gedaempft);
-  }
-
-  .werkzeuge-trenner {
-    width: 1px;
-    height: 26px;
-    background: var(--farbe-rand-stark);
-    margin: 0 4px;
-  }
-
-  .signatur-bereich {
-    margin-top: 32px;
-    padding-top: 22px;
-    border-top: 1px dashed var(--farbe-trennlinie);
-    color: var(--farbe-text-minimal);
-  }
-
-  .profil-fusszeile {
-    margin-top: auto;
-    padding-top: 28px;
-    border-top: 1px dashed var(--farbe-trennlinie);
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-  }
-
-  .kontakt-email {
-    font-size: 17px;
-    letter-spacing: -0.01em;
-  }
-
-  .sozial-links {
-    display: flex;
-    gap: 18px;
-    font-family: var(--schrift-mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-  }
-
-  .sozial-links a {
-    color: var(--farbe-text-schwach);
-  }
-
-  /* Inhaltsspalte */
-
-  .inhalt-spalte {
-    position: relative;
-    z-index: 1;
-    padding: 56px 72px 0 72px;
-  }
-
-  .projekt-navigation {
-    position: sticky;
-    top: calc(50vh - 150px);
-    z-index: 3;
-    margin-left: auto;
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .projekt-navigation-punkt {
-    width: 4px;
-    height: 56px;
-    border-radius: 2px;
-    background: var(--farbe-rand-stark);
-  }
-
-  .hero-bereich {
-    padding-bottom: 40px;
-    border-bottom: 1px dashed var(--farbe-trennlinie);
-  }
-
-  .hero-text {
-    margin: 34px 0 0;
-    max-width: 520px;
-    font-size: 19px;
-    line-height: 1.55;
-    letter-spacing: -0.015em;
-    color: #2a2a2e;
-    text-wrap: pretty;
-  }
-
-  .hero-betonung {
-    font-family: var(--schrift-serif);
-    font-style: italic;
-    font-size: 21px;
-  }
-
-  .projekt-index-kopf {
-    display: flex;
-    justify-content: space-between;
-    padding: 18px 0 14px;
-    border-bottom: 1px dashed var(--farbe-trennlinie);
-    font-family: var(--schrift-mono);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--farbe-text-schwach);
-  }
-
-  .projekt {
-    padding: 56px 0 64px;
-    border-bottom: 1px dashed var(--farbe-trennlinie);
-  }
-
-  .projekt--letztes {
-    border-bottom: none;
-  }
-
-  .projekt-bild-rahmen {
-    position: relative;
-  }
-
-  .projekt-nummer {
-    position: absolute;
-    top: 14px;
-    left: 18px;
-    font-family: var(--schrift-mono);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    color: var(--farbe-text-kaum);
-  }
-
-  .projekt-bild {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
-    border: 1px solid var(--farbe-rand);
-    border-radius: var(--radius-karte);
-    object-fit: cover;
-  }
-
-  .projekt-details {
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: 32px;
-    margin-top: 24px;
-    align-items: start;
-  }
-
-  .projekt-titel {
-    margin: 0;
-    font-size: clamp(1.25rem, 1rem + 1vw, 1.625rem);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-  }
-
-  .projekt-beschreibung {
-    margin: 10px 0 0;
-    max-width: 440px;
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--farbe-text-gedaempft);
-  }
-
-  .projekt-meta {
-    margin: 4px 0 0;
-    font-family: var(--schrift-mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--farbe-text-schwach);
-    line-height: 2;
-  }
-
-  .abschluss-bereich {
-    padding: 56px 0 96px;
-  }
-
-  .abschluss-kontakt {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-top: 34px;
-  }
-
-  .abschluss-email {
-    font-size: clamp(1.375rem, 1rem + 1.6vw, 2rem);
-    font-weight: 500;
-    letter-spacing: -0.03em;
-  }
-
-  .abschluss-datum {
-    font-family: var(--schrift-mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--farbe-text-schwach);
-  }
-</style>
+</Layout>

@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+    --farbe-hintergrund: #F4F4F2;
+    --farbe-flaeche: #FFFFFF;
+    --farbe-flaeche-alt: #F6F6F4;
+    --farbe-text: #17171A;
+    --farbe-text-gedaempft: #45454A;
+    --farbe-text-schwach: #8E8E88;
+    --farbe-text-sehr-schwach: #A6A6A0;
+    --farbe-text-kaum: #B8B8B2;
+    --farbe-text-minimal: #B4B4AE;
+    --farbe-rand: #E2E2DE;
+    --farbe-rand-stark: #DCDCD6;
+    --farbe-trennlinie: #D3D3CD;
+    --farbe-akzent: #EC3013;
+    --schrift-serif: 'Instrument Serif', serif;
+    --schrift-mono: 'JetBrains Mono', monospace;
+    --radius-karte: 14px;
+}
+
+body{
+    background: var(--farbe-hintergrund);
+    color: var(--farbe-text);
+    font-family: 'Archivo', sans-serif;
+    overflow-x: clip;
+}
+
+a{
+    color: var(--farbe-text);
+}
+
+::selection{
+    background: rgba(236, 48, 19, .14);
+}
+
+/* ── Seitenraster ───────────────────────────── */
+
+.page{
+    position: relative;
+    width: 100vw;
+    max-width: 2440px;
+    background: var(--farbe-hintergrund);
+    display: flex;
+}
+
+/* ── Profilspalte ───────────────────────────── */
+
+.profile-col{
+    position: sticky;
+    top: 20px;
+    z-index: 1;
+    margin: 20px;
+    height: calc(100vh - 48px);
+    width: 35%;
+    min-width: 400px;
+    scrollbar-width: none;
+    padding: 40px;
+    background: var(--farbe-flaeche);
+    border: 1px solid var(--farbe-rand-stark);
+    border-radius: var(--radius-karte);
+    display: flex;
+    flex-direction: column;
+
+    .profile-head{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 14px;
+        border-bottom: 1px dashed var(--farbe-trennlinie);
+        font-family: var(--schrift-mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--farbe-text-schwach);
+        width: 100%;
+    }
+
+    .profile-intro{
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-top: 40px;
+
+        .profile-img{
+            width: auto;
+            height: 200px;
+            border-radius: calc(var(--radius-karte) - 4px);
+            object-fit: cover;
+        }
+
+        .profile-info{
+            padding-top: 4px;
+
+            .profile-name{
+                margin: 0;
+                font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+                font-weight: 500;
+                line-height: 1.05;
+            }
+
+            .profile-status{
+                margin: 14px 0 0;
+                font-family: var(--schrift-mono);
+                font-size: 11px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--farbe-text-schwach);
+                line-height: 1.9;
+            }
+        }
+    }
+
+    .profile-desc{
+        margin: 40px 0 0;
+        width: 100%;
+        font-size: 15px;
+        line-height: 1.75;
+        color: var(--farbe-text-gedaempft);
+        text-wrap: pretty;
+    }
+
+    .tools-title{
+        margin: 28px 0 12px;
+        font-family: var(--schrift-mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--farbe-text-schwach);
+    }
+
+    .tools-list{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 14px 18px;
+        background: var(--farbe-hintergrund);
+        border: 1px solid var(--farbe-rand);
+        border-radius: 16px;
+        box-shadow: 0 1px 2px rgba(23, 23, 26, 0.05);
+
+        .tool{
+            flex: 1;
+            min-width: 0;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+        }
+    }
+
+    .sig{
+        margin-top: 32px;
+        padding-top: 22px;
+        border-top: 1px dashed var(--farbe-trennlinie);
+        color: var(--farbe-text-minimal);
+    }
+
+    .profile-foot{
+        margin-top: auto;
+        padding-top: 28px;
+        border-top: 1px dashed var(--farbe-trennlinie);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        .contact-email{
+            font-size: 17px;
+            letter-spacing: -0.01em;
+        }
+
+        .social{
+            display: flex;
+            gap: 18px;
+            font-family: var(--schrift-mono);
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+
+            a{
+                color: var(--farbe-text-schwach);
+            }
+        }
+    }
+}
+
+/* ── Inhaltsspalte ──────────────────────────── */
+
+.content-col{
+    --meta-spalte: 260px;
+    position: relative;
+    z-index: 1;
+    margin: 20px;
+    width: 65%;
+
+    .project-nav{
+        position: sticky;
+        top: calc(50vh - 150px);
+        z-index: 3;
+        margin-left: auto;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+
+        .project-nav-dot{
+            width: 4px;
+            height: 56px;
+            border-radius: 2px;
+            background: var(--farbe-rand-stark);
+        }
+    }
+
+    .hero{
+        padding-bottom: 40px;
+
+        .hero-text{
+            margin: 34px 0 0;
+            max-width: 520px;
+            font-size: 19px;
+            line-height: 1.55;
+            letter-spacing: -0.015em;
+            color: #2a2a2e;
+            text-wrap: pretty;
+
+            .hero-em{
+                font-family: var(--schrift-serif);
+                font-style: italic;
+                font-size: 21px;
+            }
+        }
+    }
+
+    .index-head{
+        display: flex;
+        justify-content: space-between;
+        padding: 18px 0 14px;
+        border-bottom: 1px dashed var(--farbe-trennlinie);
+        font-family: var(--schrift-mono);
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--farbe-text-schwach);
+    }
+
+    .project-list{
+        position: relative;
+
+        /* durchgehende Vertikallinien des festen Rasters */
+        .col-lines{
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+
+            .col-line{
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                border-left: 1px dashed var(--farbe-trennlinie);
+
+                &--left{
+                    left: 0;
+                }
+
+                &--divider{
+                    right: var(--meta-spalte);
+                }
+
+                &--right{
+                    right: 0;
+                }
+            }
+        }
+
+        .project{
+            padding: 56px 0 64px;
+
+            .project-img-frame{
+                position: relative;
+                border-top: 1px dashed var(--farbe-trennlinie);
+                border-bottom: 1px dashed var(--farbe-trennlinie);
+                z-index: 6;
+
+                .project-img{
+                    width: 100%;
+                    height: auto;
+                    object-fit: contain;
+
+                    img{
+                        box-shadow: 0 0 5px rgba(0,0,0,0.1);
+                    }
+                }
+            }
+
+            .project-info{
+                display: grid;
+                grid-template-columns: 1fr var(--meta-spalte);
+                margin-top: 24px;
+                align-items: stretch;
+                border-top: 1px dashed var(--farbe-trennlinie);
+                border-bottom: 1px dashed var(--farbe-trennlinie);
+
+                .project-text{
+                    padding: 22px 26px;
+
+                    .project-title{
+                        margin: 0;
+                        font-size: clamp(1.25rem, 1rem + 1vw, 1.625rem);
+                        font-weight: 500;
+                        letter-spacing: -0.02em;
+                    }
+
+                    .project-desc{
+                        margin: 10px 0 0;
+                        max-width: 440px;
+                        font-size: 15px;
+                        line-height: 1.7;
+                        color: var(--farbe-text-gedaempft);
+                    }
+                }
+
+                .project-meta{
+                    margin: 0;
+                    padding: 22px 26px;
+                    font-family: var(--schrift-mono);
+                    font-size: 11px;
+                    letter-spacing: 0.14em;
+                    text-transform: uppercase;
+                    color: var(--farbe-text-schwach);
+                    line-height: 2;
+                }
+            }
+        }
+    }
+
+    /* ── Abschluss ────────────────────────────── */
+
+    .outro{
+        padding: 56px 0 96px;
+
+        .outro-contact{
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-top: 34px;
+
+            .outro-email{
+                font-size: clamp(1.375rem, 1rem + 1.6vw, 2rem);
+                font-weight: 500;
+                letter-spacing: -0.03em;
+            }
+
+            .outro-date{
+                font-family: var(--schrift-mono);
+                font-size: 11px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--farbe-text-schwach);
+            }
+        }
+    }
+}
