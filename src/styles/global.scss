@@ -1,390 +1,90 @@
-// Sora – alle Gewichte (normal + italic)
-@font-face{ font-family: 'Sora'; font-weight: 100; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Thin.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 100; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-ThinItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 200; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-ExtraLight.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 200; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-ExtraLightItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 300; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Light.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 300; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-LightItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Regular.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 400; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-Italic.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 500; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Medium.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 500; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-MediumItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 600; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-SemiBold.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 600; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-SemiBoldItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 700; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-Bold.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 700; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-BoldItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 800; font-style: normal; font-display: swap; src: url('/fonts/Sora/Sora-ExtraBold.otf') format('opentype'); }
-@font-face{ font-family: 'Sora'; font-weight: 800; font-style: italic; font-display: swap; src: url('/fonts/Sora/Sora-ExtraBoldItalic.otf') format('opentype'); }
-
-// Satoshi – alle Gewichte (normal + italic)
-@font-face{ font-family: 'Satoshi'; font-weight: 300; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Light.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 300; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-LightItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 400; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Regular.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 400; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Italic.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 500; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Medium.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 500; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-MediumItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 700; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Bold.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 700; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-BoldItalic.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 900; font-style: normal; font-display: swap; src: url('/fonts/Satoshi/Satoshi-Black.otf') format('opentype'); }
-@font-face{ font-family: 'Satoshi'; font-weight: 900; font-style: italic; font-display: swap; src: url('/fonts/Satoshi/Satoshi-BlackItalic.otf') format('opentype'); }
-
 :root{
-    --farbe-hintergrund: #F4F4F2;
-    --farbe-flaeche: #FFFFFF;
-    --farbe-flaeche-alt: #F6F6F4;
-    --farbe-text: #17171A;
-    --farbe-text-gedaempft: #45454A;
-    --farbe-text-schwach: #8E8E88;
-    --farbe-text-sehr-schwach: #A6A6A0;
-    --farbe-text-kaum: #B8B8B2;
-    --farbe-text-minimal: #B4B4AE;
-    --farbe-rand: #E2E2DE;
-    --farbe-rand-stark: #DCDCD6;
-    --farbe-trennlinie: #D3D3CD;
-    --farbe-akzent: #EC3013;
-    --schrift-serif: 'Sora', sans-serif;
-    --schrift-mono: 'Sora', sans-serif;
-    --radius-karte: 14px;
+    --white: white;
+    --blue: #1C31AE;
 }
 
 body{
-    background: var(--farbe-hintergrund);
-    color: var(--farbe-text);
-    font-family: 'Sora', sans-serif;
-    overflow-x: clip;
-}
-
-a{
-    color: var(--farbe-text);
-}
-
-::selection{
-    background: rgba(236, 48, 19, .14);
-}
-
-/* ── Seitenraster ───────────────────────────── */
-
-.page{
-    position: relative;
     width: 100vw;
-    max-width: 2440px;
-    background: var(--farbe-hintergrund);
-    display: flex;
+    height: 100vh;
+    padding: 100px;
+    background-color: var(--blue);
+    color: var(--white);
+    display: grid;
+    place-content: center;
+    font-family: "VT323", monospace;
 }
 
-/* ── Profilspalte ───────────────────────────── */
+model-viewer::part(default-progress-bar){ display: none; }
 
-.profile-col{
-    position: sticky;
-    top: 20px;
-    z-index: 1;
-    margin: 20px;
-    height: calc(100vh - 48px);
-    width: 35%;
-    min-width: 400px;
-    scrollbar-width: none;
-    padding: 40px;
-    background: var(--farbe-flaeche);
-    border: 1px solid var(--farbe-rand-stark);
-    border-radius: var(--radius-karte);
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    
+    .menu{
+        width: 100%;
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+    
+            li{
+                color: var(--white);
+                font-size: 24px;
+                height: fit-content;
+                width: fit-content;
+                text-transform: uppercase;
+                line-height: 1;
+                font-weight: 200;
+
+                &:hover{
+                    background-color: var(--white);
+                    color: var(--blue);
+                    cursor: pointer;
+                }
+                
+            }
+
+            .selected{
+                background-color: var(--white);
+                color: var(--blue);
+            }
+
+            .disabled{
+                cursor: none;
+                user-select: none;
+                pointer-events: none;
+                color: grey;
+            }
+
+        }
+    }
+
+    .controls{
+        width: 100%;
+        
+        ul{
+            color: var(--white);
+            font-size: 24px;
+            height: fit-content;
+            width: fit-content;
+            text-transform: uppercase;
+            line-height: 1;
+            font-weight: 200;
+        }
+    }
+   
+}
+
+.divider{
+    letter-spacing: 0.2em; 
+    margin: 20px 0;
+}
+
+.cv{
     display: flex;
     flex-direction: column;
-
-    .profile-head{
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 14px;
-        border-bottom: 1px dashed var(--farbe-trennlinie);
-        font-family: var(--schrift-mono);
-        font-size: 11px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--farbe-text-schwach);
-        width: 100%;
-    }
-
-    .profile-intro{
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-        margin-top: 40px;
-
-        .profile-img{
-            width: auto;
-            height: 12.5vh;
-            min-height: 100px;
-            border-radius: calc(var(--radius-karte) - 4px);
-            object-fit: cover;
-        }
-
-        .profile-info{
-            padding-top: 4px;
-
-            .profile-name{
-                margin: 0;
-                font-size: clamp(1.5rem, 2vw, 2rem);
-                font-weight: 500;
-                line-height: 1.05;
-            }
-
-            .profile-status{
-                margin: 14px 0 0;
-                font-family: var(--schrift-mono);
-                font-size: 11px;
-                letter-spacing: 0.14em;
-                text-transform: uppercase;
-                color: var(--farbe-text-schwach);
-                line-height: 1.9;
-            }
-        }
-    }
-
-    .profile-desc{
-        margin: 40px 0 0;
-        width: 100%;
-        font-size: clamp(0.6rem, 0.8vw, 0.8rem);
-        line-height: 1.75;
-        color: var(--farbe-text-gedaempft);
-        text-wrap: pretty;
-    }
-
-    .tools-title{
-        margin: 28px 0 12px;
-        font-family: var(--schrift-mono);
-        font-size: 11px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--farbe-text-schwach);
-    }
-
-    .tools-list{
-        display: flex;
-        align-items: center;
-        width: 100%;
-        background: var(--farbe-hintergrund);
-        border: 1px solid var(--farbe-rand);
-        border-radius: 16px;
-        box-shadow: 0 1px 2px rgba(23, 23, 26, 0.05);
-
-        .tool{
-            flex: 1;
-            min-width: 0;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            object-fit: contain;
-        }
-    }
-
-    .sig{
-        margin-top: 32px;
-        padding-top: 22px;
-        border-top: 1px dashed var(--farbe-trennlinie);
-        color: var(--farbe-text-minimal);
-    }
-
-    .profile-foot{
-        margin-top: auto;
-        padding-top: 28px;
-        border-top: 1px dashed var(--farbe-trennlinie);
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-
-        .contact-email{
-            font-size: 17px;
-            letter-spacing: -0.01em;
-        }
-
-        .social{
-            display: flex;
-            gap: 18px;
-            font-family: var(--schrift-mono);
-            font-size: 11px;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-
-            a{
-                color: var(--farbe-text-schwach);
-            }
-        }
-    }
 }
 
-/* ── Inhaltsspalte ──────────────────────────── */
-
-.content-col{
-    --meta-spalte: 260px;
-    position: relative;
-    z-index: 1;
-    margin: 20px;
-    width: 65%;
-
-    .project-nav{
-        position: sticky;
-        top: calc(50vh - 150px);
-        z-index: 3;
-        margin-left: auto;
-        width: fit-content;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 14px;
-
-        .project-nav-dot{
-            width: 4px;
-            height: 56px;
-            border-radius: 2px;
-            background: var(--farbe-rand-stark);
-        }
-    }
-
-    .hero{
-        padding-bottom: 40px;
-
-        .hero-text{
-            margin: 34px 0 0;
-            max-width: 520px;
-            font-size: 19px;
-            line-height: 1.55;
-            letter-spacing: -0.015em;
-            color: #2a2a2e;
-            text-wrap: pretty;
-
-            .hero-em{
-                font-family: var(--schrift-serif);
-                font-style: italic;
-                font-size: 21px;
-            }
-        }
-    }
-
-    .index-head{
-        display: flex;
-        justify-content: space-between;
-        padding: 18px 0 14px;
-        border-bottom: 1px dashed var(--farbe-trennlinie);
-        font-family: var(--schrift-mono);
-        font-size: 11px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--farbe-text-schwach);
-    }
-
-    .project-list{
-        position: relative;
-
-        /* durchgehende Vertikallinien des festen Rasters */
-        .col-lines{
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 2;
-
-            .col-line{
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                border-left: 1px dashed var(--farbe-trennlinie);
-
-                &--left{
-                    left: 0;
-                }
-
-                &--divider{
-                    right: var(--meta-spalte);
-                }
-
-                &--right{
-                    right: 0;
-                }
-            }
-        }
-
-        .project{
-            padding: 56px 0 64px;
-
-            .project-img-frame{
-                position: relative;
-                border-top: 1px dashed var(--farbe-trennlinie);
-                border-bottom: 1px dashed var(--farbe-trennlinie);
-                z-index: 6;
-
-                .project-img{
-                    width: 100%;
-                    height: auto;
-                    object-fit: contain;
-
-                    img{
-                        box-shadow: 0 0 5px rgba(0,0,0,0.1);
-                    }
-                }
-            }
-
-            .project-info{
-                display: grid;
-                grid-template-columns: 1fr var(--meta-spalte);
-                margin-top: 24px;
-                align-items: stretch;
-                border-top: 1px dashed var(--farbe-trennlinie);
-                border-bottom: 1px dashed var(--farbe-trennlinie);
-
-                .project-text{
-                    padding: 22px 26px;
-
-                    .project-title{
-                        margin: 0;
-                        font-size: clamp(1.25rem, 1rem + 1vw, 1.625rem);
-                        font-weight: 500;
-                        letter-spacing: -0.02em;
-                    }
-
-                    .project-desc{
-                        margin: 10px 0 0;
-                        max-width: 440px;
-                        font-size: 15px;
-                        line-height: 1.7;
-                        color: var(--farbe-text-gedaempft);
-                    }
-                }
-
-                .project-meta{
-                    margin: 0;
-                    padding: 22px 26px;
-                    font-family: var(--schrift-mono);
-                    font-size: 11px;
-                    letter-spacing: 0.14em;
-                    text-transform: uppercase;
-                    color: var(--farbe-text-schwach);
-                    line-height: 2;
-                }
-            }
-        }
-    }
-
-    /* ── Abschluss ────────────────────────────── */
-
-    .outro{
-        padding: 56px 0 96px;
-
-        .outro-contact{
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            margin-top: 34px;
-
-            .outro-email{
-                font-size: clamp(1.375rem, 1rem + 1.6vw, 2rem);
-                font-weight: 500;
-                letter-spacing: -0.03em;
-            }
-
-            .outro-date{
-                font-family: var(--schrift-mono);
-                font-size: 11px;
-                letter-spacing: 0.14em;
-                text-transform: uppercase;
-                color: var(--farbe-text-schwach);
-            }
-        }
-    }
-}

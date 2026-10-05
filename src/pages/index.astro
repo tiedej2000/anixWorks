@@ -1,186 +1,89 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import AsciiFeld from '../components/AsciiFeld.astro';
 ---
 
-<Layout titel="Jonas Keller — Webdesign & Frontend">
-    <div class="page">
-        <section class="profile-col">
-            <div class="profile-head">
-                <span>Webdesign Frontend</span>
-                <span>Offenburg</span>
-            </div>
-
-            <div class="profile-intro">
-                <img
-                    class="profile-img"
-                    /* src="/bilder/profile_img.png" */
-                    alt=""
-                    width="164"
-                    height="206"
-                />
-                <div class="profile-info">
-                    <h1 class="profile-name">Justin Tiede</h1>
-                    <p class="profile-status">
-                        Freiberuflich<br />
-                        seit 2018<br />
-                    </p>
-                </div>
-            </div>
-
-            <p class="profile-desc">
-                Ich gestalte und baue Websites für Studios, Agenturen und kleine Marken. Mein Fokus liegt
-                auf klaren Strukturen, ruhiger Typografie und Seiten, die schnell laden. Seit acht Jahren
-                arbeite ich zwischen Entwurf und Umsetzung, meistens allein, gelegentlich im Team. Am
-                liebsten übernehme ich ein Projekt <em class="profile-em">vollständig</em>, von der
-                ersten Skizze bis zum Livegang.
-            </p>
-
-            <p class="tools-title">Werkzeuge</p>
-            <div class="tools-list">
-                <img class="tool" src="/tools/figma.png" alt="Figma" title="Figma" width="48" height="48" />
-                <img class="tool" src="/tools/photoshop.png" alt="Photoshop" title="Photoshop" width="48" height="48" />
-                <img class="tool" src="/tools/illustrator.png" alt="Illustrator" title="Illustrator" width="48" height="48" />
-                <img class="tool" src="/tools/premiere.png" alt="Premiere Pro" title="Premiere Pro" width="48" height="48" />
-                <img class="tool" src="/tools/blender.png" alt="Blender" title="Blender" width="48" height="48" />
-                <img class="tool" src="/tools/claude.png" alt="Claude" title="Claude" width="48" height="48" />
-            </div>
-
-            <div class="sig">
-                <AsciiFeld spalten={24} zeilen={4} schriftgroesse={13} />
-            </div>
-
-            <div class="profile-foot">
-                <a class="contact-email" href="mailto:tiedejustin@protonmail.com">tiedejustin@protonmail.com</a>
-                <div class="social">
-                    <a href="#">INSTAGRAM</a>
-                    <a href="#">GITHUB</a>
-                </div>
-            </div>
+<Layout titel="Under Construction">
+    <main>
+        <section class="main-container">
+            <article class="modell-viewer">
+                 <model-viewer
+                    src="modells/profile.glb"
+                    alt="Beschreibung des Modells"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="40deg"
+                    ar
+                    disable-zoom
+                    interaction-prompt="none"
+                    min-camera-orbit="auto 90deg auto"
+                    max-camera-orbit="auto 90deg auto"
+                    camera-orbit="-35deg 0deg auto"
+                    shadow-intensity="0"
+                    shadow-softness="1"
+                    exposure="0.6"
+                    style="width: 150px; height: 200px;">
+                </model-viewer>
+            </article>
+            <article class="menu">
+                <div class="divider">-------------------MENU------------------</div>
+                <ul>
+                    <li data-href="/cv" data-model="/modells/profile.glb">cv/lebenslauf</li>
+                    <li class="disabled" data-model="/modells/html.glb">portfolio</li>
+                    <li data-href="/other-works" data-model="/modells/other.glb">other works</li>
+                    <li data-href="mailto:tiedejustin@protonmail.com" data-model="/modells/mail.glb">mail</li>
+                    <li data-href="https://instagram.com/anix.works" data-model="/modells/instagram.glb">instagram</li>
+                </ul>
+            </article>
+            <article class="controls">
+                <div class="divider">-----------------CONTROLS----------------</div>
+                <ul>
+                    <li>SET: <span>ENTER KEY</span></li>
+                    <li>SELECT: <span>UP/DOWN ARROW</span></li>
+                </ul>
+            </article>
         </section>
-
-        <section class="content-col">
-            <div class="project-nav" aria-hidden="true">
-                <span class="project-nav-dot" title="strafe"></span>
-                <span class="project-nav-dot" title="nikiszeug"></span>
-                <span class="project-nav-dot" title="Feldstudie"></span>
-                <span class="project-nav-dot" title="Studio Halm"></span>
-            </div>
-
-            <div class="hero">
-                <AsciiFeld spalten={44} zeilen={9} schriftgroesse={21} />
-                <p class="hero-text">
-                    Entwurf und Umsetzung aus einer Hand — ruhige Seiten, die <em class="hero-em">schnell</em> laden.
-                </p>
-            </div>
-
-            <div class="index-head">
-                <span>Index — Ausgewählte Arbeiten</span>
-                <span>04 Einträge</span>
-            </div>
-
-            <div class="project-list">
-            <div class="col-lines" aria-hidden="true">
-                <span class="col-line col-line--left"></span>
-                <span class="col-line col-line--divider"></span>
-                <span class="col-line col-line--right"></span>
-            </div>
-
-            <article class="project">
-                <div class="project-img-frame">
-                    <img
-                        class="project-img"
-                        src="/projects/strafe-site.png"
-                        alt="strafe — Skatewear-Onlineshop"
-                        width="1600"
-                        height="1000"
-                    />
-                </div>
-                <div class="project-info">
-                    <div class="project-text">
-                        <h2 class="project-title">strafe</h2>
-                        <p class="project-desc">
-                            Konzept und Umsetzung eines Skatewear-Onlineshops als Bachelorarbeit —
-                            von der Markenidee bis zum funktionierenden Store mit klarer Bildsprache
-                            und rauem, straßennahem Auftritt.
-                        </p>
-                    </div>
-                    <p class="project-meta">2026<br />Astro, JS<br />HTML, SCSS</p>
-                </div>
-            </article>
-
-            <article class="project">
-                <div class="project-img-frame">
-                    <img
-                        class="project-img"
-                        src="/projects/nikis.png"
-                        alt="nikiszeug — Fotogalerie für den Fotografen Nikita Bitsch"
-                        width="1600"
-                        height="1000"
-                    />
-                </div>
-                <div class="project-info">
-                    <div class="project-text">
-                        <h2 class="project-title">nikiszeug</h2>
-                        <p class="project-desc">
-                            Fotogalerie für den Fotografen Nikita Bitsch — eine ruhige, bildzentrierte
-                            Website, die seine Arbeiten in den Vordergrund stellt.
-                        </p>
-                    </div>
-                    <p class="project-meta">2026<br />JS<br />HTML, SCSS</p>
-                </div>
-            </article>
-
-            <article class="project">
-                <div class="project-img-frame">
-                    <img
-                        class="project-img"
-                        src="/projects/lafostra.png"
-                        alt="Digitales Magazin Feldstudie"
-                        width="1600"
-                        height="1000"
-                    />
-                </div>
-                <div class="project-info">
-                    <div class="project-text">
-                        <h2 class="project-title">Feldstudie</h2>
-                        <p class="project-desc">
-                            Digitales Magazin über Landwirtschaft, mit eigenem Redaktionssystem.
-                        </p>
-                    </div>
-                    <p class="project-meta">2024<br />Design &amp; Frontend<br />Next.js</p>
-                </div>
-            </article>
-
-            <article class="project project--last">
-                <div class="project-img-frame">
-                    <img
-                        class="project-img"
-                        src="/projects/buschmann.png"
-                        alt="Portfolioseite für Studio Halm"
-                        width="1600"
-                        height="1000"
-                    />
-                </div>
-                <div class="project-info">
-                    <div class="project-text">
-                        <h2 class="project-title">Studio Halm</h2>
-                        <p class="project-desc">
-                            Portfolioseite für ein Fotografieduo, gebaut für sehr große Bilddateien.
-                        </p>
-                    </div>
-                    <p class="project-meta">2024<br />Art Direction<br />Framer</p>
-                </div>
-            </article>
-            </div>
-
-            <section class="outro">
-                <AsciiFeld spalten={44} zeilen={5} schriftgroesse={21} />
-                <div class="outro-contact">
-                    <a class="outro-email" href="mailto:tiedejustin@protonmail.com">tiedejustin@protonmail.com</a>
-                    <span class="outro-date">Ende — 2026</span>
-                </div>
-            </section>
-        </section>
-    </div>
+    </main>
 </Layout>
+
+<script>
+    document.querySelectorAll("[data-model]").forEach((el) => fetch(el.dataset.model));
+
+    const items = [...document.querySelectorAll('.menu li')];
+    let index = 0;
+    items[index].classList.add('selected');
+
+    function setSelected(next) {
+        items[index].classList.remove('selected');
+        index = (next + items.length) % items.length; 
+        items[index].classList.add('selected');
+        showModel(items[index]);  
+    }
+
+    function activate(el) {
+        const href = el.dataset.href;
+        if (!href) return;
+        if (el.dataset.external !== undefined) {
+            window.open(href, '_blank');
+        } else {
+            window.location.href = href;
+        }
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown') { e.preventDefault(); setSelected(index + 1); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); setSelected(index - 1); }
+        else if (e.key === 'Enter') { activate(items[index]); }
+    });
+
+    items.forEach((el) => {
+        el.addEventListener('click', () => activate(el));
+        el.addEventListener('mouseenter', () => showModel(el));
+    });
+
+
+    const mv = document.querySelector('model-viewer');
+    function showModel(el) {
+    const model = el.dataset.model;
+    mv.setAttribute('src', model);
+    }
+</script>

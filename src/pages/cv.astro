@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout titel="CV/Lebenslauf">
+    <main class="cv">
+        <article class="modell-viewer">
+            <model-viewer
+                src="modells/cv.glb"
+                alt="Beschreibung des Modells"
+                camera-controls
+                ar
+                interaction-prompt="none"
+                min-camera-orbit="auto 0deg auto"
+                max-camera-orbit="auto 180deg auto"
+                camera-orbit="90deg 90deg auto"
+                shadow-intensity="0"
+                shadow-softness="1"
+                exposure="0.6"
+                style="width: 800px; height: calc(100vh - 200px);">
+            </model-viewer>
+        </article>
+        <article class="links">
+            <div class="link">open in a new tab</div>
+            <div class="link">download cv</div>
+        </article>
+    </main>
+</Layout>
