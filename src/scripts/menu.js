@@ -29,8 +29,15 @@ function activate(el) {
         return;
     }
     if(!href) return;
-    if (el.dataset.external !== undefined) {
-        window.open(href, '_blank');
+    if (el.dataset.download !== undefined) {
+        const a = document.createElement('a');
+        a.href = href;
+        a.download = '';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+    } else if (el.dataset.external !== undefined) {
+        window.open(href, '_blank'); 
     } else {
         window.location.href = href;
     }

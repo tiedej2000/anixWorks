@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout titel="Under Construction">
-    <main>
+    <main class="home">
         <section class="main-container crt">
             <article class="modell-viewer">
                  <model-viewer
@@ -46,6 +46,7 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-    import '../scripts/menu.js'
-    document.querySelectorAll("[data-model]").forEach((el) => fetch(el.dataset.model));
+    import '../scripts/menu.js';
+
+    await Promise.all([...document.querySelectorAll("[data-model]")].map((el) => fetch(el.dataset.model)));
 </script>

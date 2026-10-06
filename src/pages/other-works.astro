@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { worksLogos } from '../data/other-works';
+---
+
+<Layout titel='Other-Works'>
+    <main class="other-works">
+        <section class="settings-filters">
+            <article class="menu" id="settings-filters">
+                <ul>
+                    <li data-href="#3D">3D WORKS</li>
+                    <li>LOGO WORKS</li>
+                    <li>MIXED MEDIA</li>
+                    <li id="controls">left</li>
+                    <li>right</li>
+                </ul>
+                <div class="divider">-------------------MENU------------------</div>
+
+            </article>
+        </section>
+        <section class="work-previews" id="3D">
+            {worksLogos.map((work) => (
+                <article class="work-card">
+                    <img src={work.images[0].src} alt={work.images[0].alt} />
+                    <img src={work.images[1].src} alt={work.images[1].alt} />
+                </article>
+                <article class="work-full">
+                    <img src={work.images[1].src} alt={work.images[1].alt} />
+                </article>
+            ))}
+        </section>
+    </main>
+</Layout>
+
+<script>
+import '../scripts/menu.js';
+
+const item = document.querySelector(".work-previews");
+
+window.addEventListener("wheel", function (e) {
+    if (e.deltaY > 0) item.scrollLeft += 100;
+    else item.scrollLeft -= 100;
+});
+
+</script>
