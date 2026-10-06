@@ -21,7 +21,11 @@ const { titel } = Astro.props;
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
     <title>{titel}</title>
   </head>
-  <body>
+  <body class="crt">
     <slot />
+      <div id="custom-cursor" class="clicked"></div>
+      <script>
+        import '../scripts/cursor.js'; 
+      </script>
   </body>
 </html>

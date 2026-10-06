@@ -16,13 +16,20 @@ import Layout from '../layouts/Layout.astro';
                 camera-orbit="90deg 90deg auto"
                 shadow-intensity="0"
                 shadow-softness="1"
-                exposure="0.6"
-                style="width: 800px; height: calc(100vh - 200px);">
+                exposure="0.7"
+                style="width: 800px; height: calc(100vh - 200px); z-index: 4;">
             </model-viewer>
         </article>
-        <article class="links">
-            <div class="link">open in a new tab</div>
-            <div class="link">download cv</div>
-        </article>
+        <div class="menu">
+            <ul>
+                <li><a href="/other/lebenslauf_tiede_justin.pdf" target="_blank">open in a new tab</a></li>
+                <li><a href="/other/lebenslauf_tiede_justin.pdf" download>download</a></li>
+                <li data-href="/">go back</li>
+            </ul>
+        </div>
     </main>
-</Layout>
+</Layout>   
+
+<script>
+    import '../scripts/menu.js'
+</script>

@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout titel="Under Construction">
     <main>
-        <section class="main-container">
+        <section class="main-container crt">
             <article class="modell-viewer">
                  <model-viewer
                     src="modells/profile.glb"
@@ -28,7 +28,7 @@ import Layout from '../layouts/Layout.astro';
                 <div class="divider">-------------------MENU------------------</div>
                 <ul>
                     <li data-href="/cv" data-model="/modells/profile.glb">cv/lebenslauf</li>
-                    <li class="disabled" data-model="/modells/html.glb">portfolio</li>
+                    <li id="disabled" data-model="/modells/html.glb">portfolio</li>
                     <li data-href="/other-works" data-model="/modells/other.glb">other works</li>
                     <li data-href="mailto:tiedejustin@protonmail.com" data-model="/modells/mail.glb">mail</li>
                     <li data-href="https://instagram.com/anix.works" data-model="/modells/instagram.glb">instagram</li>
@@ -46,44 +46,6 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
+    import '../scripts/menu.js'
     document.querySelectorAll("[data-model]").forEach((el) => fetch(el.dataset.model));
-
-    const items = [...document.querySelectorAll('.menu li')];
-    let index = 0;
-    items[index].classList.add('selected');
-
-    function setSelected(next) {
-        items[index].classList.remove('selected');
-        index = (next + items.length) % items.length; 
-        items[index].classList.add('selected');
-        showModel(items[index]);  
-    }
-
-    function activate(el) {
-        const href = el.dataset.href;
-        if (!href) return;
-        if (el.dataset.external !== undefined) {
-            window.open(href, '_blank');
-        } else {
-            window.location.href = href;
-        }
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowDown') { e.preventDefault(); setSelected(index + 1); }
-        else if (e.key === 'ArrowUp') { e.preventDefault(); setSelected(index - 1); }
-        else if (e.key === 'Enter') { activate(items[index]); }
-    });
-
-    items.forEach((el) => {
-        el.addEventListener('click', () => activate(el));
-        el.addEventListener('mouseenter', () => showModel(el));
-    });
-
-
-    const mv = document.querySelector('model-viewer');
-    function showModel(el) {
-    const model = el.dataset.model;
-    mv.setAttribute('src', model);
-    }
 </script>
